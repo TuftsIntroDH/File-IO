@@ -1,3 +1,6 @@
 .DS_Store
 # Ignore i/o practice files
 iliad_*.txt
+100_lines.txt
+100_lines_2.txt
+100_lines_3.txt
