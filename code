@@ -1,0 +1,24 @@
+from pathlib import Path
+
+
+input_file = Path("pope-iliad.txt")  #what is coming in
+output_dir = Path("output_lines")  #what is going out
+
+#output
+output_dir.mkdir(exist_ok=True)
+
+with input_file.open("r", encoding="utf-8") as file:
+    lines = file.readlines()  #for a list
+
+#slice
+start_index = 0
+end_index = start_index + 1000
+sliced_lines = lines[start_index:end_index]
+
+#individual files
+for i, line in enumerate(sliced_lines, start=1):
+    output_path = output_dir / f"line_{i}.txt"
+    with output_path.open("w", encoding="utf-8") as out_file:
+        out_file.write(line)
+
+print(f"Successfully wrote {len(sliced_lines)} lines to '{output_dir}'.")
